@@ -22,12 +22,12 @@ This is a Python implementation of the popular **2048 game** using PyGame. Slide
 3. Run the game:
    python main.py
 
-#Controls
-Arrow Keys: Move tiles (Up, Down, Left, Right)
-Enter: Restart the game after game over
-Close Window: Quit the game
+## Controls
+- Arrow Keys: Move tiles (Up, Down, Left, Right)
+- Enter: Restart the game after game over
+- Close Window: Quit the game
 
-#Files
+## Files
 - main.py — Entry point, handles game loop and events
 - board.py — Board display and piece rendering
 - game_logic.py — Tile movement and merging logic
