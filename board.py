@@ -18,7 +18,7 @@ colors = {0: (204, 192, 179),
           "bg" :(187,173,160)
           }
 
-def board():
+def board(screen, font, score, high_score):
    pygame.draw.rect(screen,(196,164,132),[200,110,400,400],0,10)
    score_txt=font.render(f'Score:{score}',True,'black')
    high_score_txt=font.render(f'High Score:{high_score}',True,'black')
@@ -37,14 +37,14 @@ def no_moves_left(board):
                 return False
     return True
 
-def draw_over():
+def draw_over(screen, font):
     pygame.draw.rect(screen,'black',[50+200,50+110,300,100],0,10)
     txt1=font.render("Game Over!",True,"white")
     txt2=font.render("Press Enter T0 Restart",True,'white')
     screen.blit(txt1,(130+200,65+110))
     screen.blit(txt2,(70+200,105+110))
 
-def pieces(board):
+def pieces(screen, board, font):
     for i in range(4):
         for j in range(4):
             value=board[i][j]
