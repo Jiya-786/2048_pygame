@@ -20,6 +20,7 @@ This is a Python implementation of the popular **2048 game** using PyGame. Slide
    ```bash
    pip install -r requirements.txt
 3. Run the game:
+   ```bash
    python main.py
 
 ## Controls
