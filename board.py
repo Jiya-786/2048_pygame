@@ -1,5 +1,5 @@
 import pygame
-
+# colours from the original 2048 game
 colors = {0: (204, 192, 179),
           2: (238, 228, 218),
           4: (237, 224, 200),
@@ -17,15 +17,19 @@ colors = {0: (204, 192, 179),
           "other" :(0,0,0),
           "bg" :(187,173,160)
           }
+#creating the main board
 
 def board(screen, font, score, high_score):
    pygame.draw.rect(screen,(196,164,132),[200,110,400,400],0,10)
+# font for score
    score_txt=font.render(f'Score:{score}',True,'black')
+# font for  high sore
    high_score_txt=font.render(f'High Score:{high_score}',True,'black')
    screen.blit(high_score_txt,(10+200,410+110))
    screen.blit(score_txt,(10+200,450+110))
-
+# this the second condition for game over
 def no_moves_left(board):
+# checking if any two consecutive blocks are same
     for i in range(4):
         for j in range(3):
             if board[i][j] == board[i][j+1]:
@@ -36,14 +40,14 @@ def no_moves_left(board):
             if board[i][j] == board[i+1][j]:
                 return False
     return True
-
+# restaeting the game
 def draw_over(screen, font):
     pygame.draw.rect(screen,'black',[50+200,50+110,300,100],0,10)
     txt1=font.render("Game Over!",True,"white")
     txt2=font.render("Press Enter T0 Restart",True,'white')
     screen.blit(txt1,(130+200,65+110))
     screen.blit(txt2,(70+200,105+110))
-
+# creating the blocks
 def pieces(screen, board, font):
     for i in range(4):
         for j in range(4):
@@ -58,6 +62,7 @@ def pieces(screen, board, font):
                 color=colors["other"]
             pygame.draw.rect(screen,color,[j*95+20+200,i*95+20+110,75,75],0,5)
             if value>0:
+          # this is to ensure that the values lie within the block
                 value_len=len(str(value))
                 font =pygame.font.Font('freesansbold.ttf',48-(5*value_len))
                 value_text=font.render(str(value),True,value_colour)
