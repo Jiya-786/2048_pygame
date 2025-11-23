@@ -28,8 +28,8 @@ Enter: Restart the game after game over
 Close Window: Quit the game
 
 #Files
-main.py — Entry point, handles game loop and events
-board.py — Board display and piece rendering
-game_logic.py — Tile movement and merging logic
-icon.png.png — Window icon
-data/high_score.txt — High score storage
+- main.py — Entry point, handles game loop and events
+- board.py — Board display and piece rendering
+- game_logic.py — Tile movement and merging logic
+- icon.png.png — Window icon
+- data/high_score.txt — High score storage
